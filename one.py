@@ -19,10 +19,17 @@ def solve(li:list, k:int):
                 return (i,j,True)
     return False   
             
-            
+def solve2():
+    se= set()
+    for i in range(len(li)):
+        if k-li[i] in se:
+            return True
+        se.add(li[i])
+    return False           
 
 li= [10, 15, 3, 7]
-k= 17
+k= 25
 
-ans= solve(li,k)
-print(ans)
+ans1= solve(li,k)
+ans2= solve2()
+print(ans1,ans2)
